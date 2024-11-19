@@ -1,0 +1,88 @@
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-white">
+  <div class="flex flex-col items-center">
+    <img alt="Official Seal of Ilocos Sur" class="mb-4" height="150" src="C:\Users\acer\OneDrive\Pictures\images.jpeg" width="150"/>
+    <h1 class="text-4xl font-bold mb-2">Description</h1>
+    <p class="text-lg text-gray-700 mb-6 text-center">
+      Ilocos Sur is a province in the Philippines situated in the Ilocos Region occupying the northwestern section of Luzon. Its capital is the City of Vigan.
+    </p>
+    <div class="flex space-x-4 mb-6">
+      <button onclick="toggleRegisterForm()" class="bg-blue-500 text-white px-4 py-2 rounded">Register</button>
+      <button class="bg-gray-500 text-white px-4 py-2 rounded">Exit</button>
+    </div>
+  </div>
+
+  <div id="registerForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white w-full max-w-md p-8 rounded shadow-lg">
+      <form onsubmit="handleSubmit(event)">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">
+            First Name
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="firstName" type="text" placeholder="First Name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName">
+            Last Name
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastName" type="text" placeholder="Last Name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+            Address
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" placeholder="Address" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="profession">
+            Profession
+          </label>
+          <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="profession" required>
+            <option value="">Select Profession</option>
+            <option>Teacher</option>
+            <option>Engineer</option>
+            <option>Doctor</option>
+            <option>Lawyer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="comment">
+            Comment
+          </label>
+          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="comment" placeholder="Your comment" required></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Submit
+          </button>
+          <button onclick="toggleRegisterForm()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleRegisterForm() {
+      var form = document.getElementById('registerForm');
+      if (form.classList.contains('hidden')) {
+        form.classList.remove('hidden');
+      } else {
+        form.classList.add('hidden');
+      }
+    }
+    function exit() {
+      alert ("Exit button clicked!")
+    }
+    function cancel() {
+      document.queryAelector('form').reset();
+      alert ("Form has been cleared.");
+    }
+  </script>
+</body>
+</html>
